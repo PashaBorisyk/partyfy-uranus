@@ -2,8 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/github.com/PashaBorisyk/video-stream-service" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/golang.org/x/net" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/PashaBorisyk/video-stream-service" vcs="" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/net" vcs="" />
     <mapping directory="$PROJECT_DIR$/src/src/golang.org/x/net" vcs="" />
   </component>
 </project>

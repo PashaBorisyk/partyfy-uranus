@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="378d6eb7-0366-4e79-9f21-285f5d9f5661" name="Azure Hipe Server" url="http://40.115.107.135">
+        <fileTransfer host="40.115.107.135" port="22" privateKey="C:\pashaborisyk\ssh\azure" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="1000" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
