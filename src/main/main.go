@@ -7,23 +7,23 @@ import (
 )
 
 const (
-	CONN_HOST = "0.0.0.0"
-	CONN_PORT = "3333"
-	CONN_TYPE = "tcp"
+	ConnHost = "0.0.0.0"
+	ConnPort = "3333"
+	ConnType = "tcp"
 )
 
 func main() {
 
 	log.Print("Starting program...")
 
-	listener, err := net.Listen(CONN_TYPE, CONN_HOST+":"+CONN_PORT)
+	listener, err := net.Listen(ConnType, ConnHost+":"+ConnPort)
 
 	if err != nil {
 		log.Print("Error while serving connections")
 	}
 
 	defer listener.Close()
-	log.Print("Listening on ", CONN_HOST, " : ", CONN_PORT)
+	log.Print("Listening on ", ConnHost, " : ", ConnPort)
 
 	for {
 		connection, err := listener.Accept()
@@ -32,13 +32,14 @@ func main() {
 			os.Exit(1)
 		}
 
-		go serverClientConnection(connection)
+		go serveClientInputConnection(connection)
+		go serveClientOutputConnection(connection)
 
 	}
 
 }
 
-func serverClientConnection(conn net.Conn) {
+func serveClientInputConnection(conn net.Conn) {
 
 	log.Print("Connection from ", conn.RemoteAddr())
 
@@ -53,5 +54,9 @@ func serverClientConnection(conn net.Conn) {
 		}
 		log.Print("read bytes : ", read)
 	}
+
+}
+
+func serveClientOutputConnection(conn net.Conn) {
 
 }
