@@ -41,6 +41,8 @@ func main() {
 
 func serveClientInputConnection(conn net.Conn) {
 
+	defer conn.Close()
+
 	log.Print("Connection from ", conn.RemoteAddr())
 
 	buf := make([]byte, 1024)
@@ -52,11 +54,11 @@ func serveClientInputConnection(conn net.Conn) {
 			log.Print(err)
 			break
 		}
-		log.Print("read bytes : ", read)
+		log.Print("read bytes : ", string(buf[:read]))
 	}
 
 }
 
 func serveClientOutputConnection(conn net.Conn) {
-
+	defer conn.Close()
 }
